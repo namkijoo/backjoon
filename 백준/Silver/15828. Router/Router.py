@@ -1,5 +1,5 @@
 import sys
-input= sys.stdin.readline
+input = sys.stdin.readline
 
 from collections import deque
 
@@ -11,9 +11,8 @@ while True:
         break
     elif num > 0:
         queue.append(num)
-    if len(queue) < N:
-        if num == 0:
-            queue.popleft()
+    elif len(queue) < N:
+        queue.popleft()
 if(queue) :
     print(*queue)
 else: 
