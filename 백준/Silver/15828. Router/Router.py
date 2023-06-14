@@ -12,5 +12,7 @@ while True:
         elif num == 0:
             if queue:
                 queue.popleft()
-
-print(*queue)
+if(queue) :
+    print(*queue)
+else: 
+    print("empty")
