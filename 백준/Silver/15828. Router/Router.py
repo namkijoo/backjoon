@@ -1,18 +1,24 @@
+import sys
+input = sys.stdin.readline
+
 from collections import deque
 
-queue = deque()
-N = int(input())
+N = int(input()) # buffer size
+
+packet = deque()
+
 while True:
-    num = int(input())
-    if num == -1:
+    info_ = int(input())
+        
+    if info_ == -1:
         break
-    if len(queue) < N:
-        if num > 0:
-            queue.append(num)
-        elif num == 0:
-            if queue:
-                queue.popleft()
-if(queue) :
-    print(*queue)
-else: 
-    print("empty")
+    
+    if info_ == 0:
+        packet.popleft()
+    elif len(packet) < N:
+        packet.append(info_)
+
+if packet:
+    print(*packet)
+else:
+    print('empty')
