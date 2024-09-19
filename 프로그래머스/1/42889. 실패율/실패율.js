@@ -18,6 +18,5 @@ function solution(N, stages) {
     }
     
     const result=Object.entries(fails).sort((a,b)=>b[1]-a[1])
-    
     return result.map((v)=>Number(v[0]))
 }
