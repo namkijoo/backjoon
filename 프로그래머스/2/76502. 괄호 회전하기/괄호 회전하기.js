@@ -18,7 +18,7 @@ function changeString(answers) {
         arr.push(answers[i]);
     }
     arr.push(answers[0]);
-    return arr.join(''); 
+    return arr
 }
 
 function isTrue(answers) {
