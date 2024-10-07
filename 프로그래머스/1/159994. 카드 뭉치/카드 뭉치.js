@@ -1,20 +1,19 @@
 function solution(cards1, cards2, goal) {
-    var answer=0;
-    for(let i=0; i<goal.length; i++){
-        if(goal[i]===cards1[0]){
-            cards1.shift()
-            answer+=1
+    let cards1Count=0
+    let cards2Count=0
+    for(const card of goal){
+        if(cards1[cards1Count]==card){
+            cards1Count++
         }
-        else if(goal[i]===cards2[0]){
-            cards2.shift()
-            answer+=1
+        if(cards2[cards2Count]==card){
+            cards2Count++
         }
     }
-    if(answer==goal.length){
-        return "Yes"
+    if(cards1Count+cards2Count===goal.length){
+        console.log("Yes")
+        return("Yes")
+    }else{
+        console.log("No")
+        return("No")
     }
-    else{
-        return "No"
-    }
-    
 }
