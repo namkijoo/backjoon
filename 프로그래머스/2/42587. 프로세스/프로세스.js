@@ -1,24 +1,20 @@
 function solution(priorities, location) {
-    let answer = 0;
-    let arr = []
-    let max_value = Math.max(...priorities);
+    const queue = priorities.map((value, index) => [value, index]);
+    let printOrder = 0; 
+    let sortedPriorities = [...priorities].sort((a, b) => b - a); 
 
-    //위치 배열 만들기
-    for(let i = 0; i < priorities.length; i++){
-        arr.push(i);
-    }
-
-    while(priorities.length != 0){
-         max_value = Math.max(...priorities);
+    while (queue.length > 0) {
+        const [currentPriority, currentIndex] = queue.shift(); 
         
-        if(priorities[0] < max_value){
-            priorities.push(priorities.shift());
-            arr.push(arr.shift());
-        }else {
-            answer+=1;
-            priorities.shift();
-            if(arr.shift() == location)
-                return answer;
+        if (currentPriority === sortedPriorities[printOrder]) {
+            printOrder++; 
+            if (currentIndex === location) {
+                return printOrder; 
+            }
+        } else {
+            queue.push([currentPriority, currentIndex]);
         }
     }
+
+    return -1; // 만약 도달하지 못한 경우
 }
