@@ -1,21 +1,28 @@
 function solution(n, computers) {
-    let visited = [false];
+    let visited = Array(n).fill(false);
     let answer = 0;
+    
+    function bfs(start) {
+        let queue = [start];
+        visited[start] = true;
 
-    function dfs(i) {
-        visited[i] = true;
-        for(let j=0; j<computers[i].length; j++) {
-            if(computers[i][j]===1 && !visited[j]){
-                dfs(j);
+        while (queue.length > 0) {
+            let current = queue.shift();
+            for (let i = 0; i < computers[current].length; i++) {
+                if (computers[current][i] === 1 && !visited[i]) {
+                    visited[i] = true;
+                    queue.push(i);
+                }
             }
         }
     }
     
-    for (let i=0; i < computers.length; i++) {
+    for (let i = 0; i < n; i++) {
         if (!visited[i]) {
-            dfs(i)
-            answer++;
+            bfs(i);
+            answer += 1;
         }
     }
+    
     return answer;
 }
