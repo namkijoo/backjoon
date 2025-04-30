@@ -1,10 +1,9 @@
 function solution(A,B){
-    var answer = 0;
-    A.sort((a,b)=> a-b);
-    B.sort((a,b)=> b-a); 
-    
-   for (let i = 0; i < A.length; i++) {
-       answer += A[i]*B[i];
-   }
-    return answer;
+   var answer = 0
+   a = A.sort((a,b)=>a-b)
+    b = B.sort((a,b)=>b-a)
+    for(let i=0; i<a.length; i++){
+        answer+=a[i]*b[i]
+    }
+    return answer
 }
