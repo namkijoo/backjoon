@@ -1,10 +1,10 @@
 function solution(nums) {
-    const hashMap = new Map()
-    let n = nums.length/2
-    let setNums = [...new Set(nums)]
-    if(setNums.length>=n){
-        return n
-    }else{
-        return setNums.length
-    }
+  const num  = nums.length/2
+  const answer = new Set(nums)
+  if(num<answer.size){
+      return num
+  }else{
+    return answer.size      
+  }
+
 }
