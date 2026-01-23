@@ -7,7 +7,7 @@ function solution(clothes) {
     }
     
     for(const [a,b] of hashMap){
-        answer*=b+1
+        answer*=b+1 
     }
     
     return answer-1
