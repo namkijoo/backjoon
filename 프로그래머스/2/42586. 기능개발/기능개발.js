@@ -5,6 +5,7 @@ function solution(progresses, speeds) {
         Math.ceil((100-progress)/speeds[index])
     ))
     
+    console.log(daysLeft)
     let count =0;
     let maxDay=daysLeft[0]
     
@@ -14,7 +15,7 @@ function solution(progresses, speeds) {
         }else{
             answer.push(count)
             count=1
-            maxDay=daysLeft[i]
+            maxDay=daysLeft[i] 
         }
     }
     
